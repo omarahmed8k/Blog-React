@@ -1,0 +1,149 @@
+/* ! Defaults */
+
+/* Arabic-Fonts */
+@font-face {
+  font-family: "Tajawal-Bold";
+  src: url(assets/fonts/Tajawal-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Tajawal-Medium";
+  src: url(assets/fonts/Tajawal-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Tajawal-Regular";
+  src: url(assets/fonts/Tajawal-Regular.ttf);
+}
+/* Main Values */
+:root {
+  --font-bold: "Tajawal-Bold", sans-serif;
+  --font-medium: "Tajawal-Medium", sans-serif;
+  --font-regular: "Tajawal-Regular", sans-serif;
+  --main-color: #ffc400;
+  --second-color: #2386c8;
+  --text-color: #313a49;
+}
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a7a7a7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--main-color);
+}
+
+* {
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+}
+
+html {
+  direction: ltr;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-regular);
+  color: var(--text-color);
+  background-color: #f0f0f0;
+  text-align: left;
+  cursor: default;
+  padding-bottom: 40px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+button,
+input,
+textarea,
+select,
+label,
+table,
+ul,
+li {
+  font-family: var(--font-regular);
+  color: var(--text-color);
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+input {
+  border: none;
+  outline: none;
+  font-family: var(--font-regular);
+  color: var(--text-color);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+img {
+  pointer-events: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 992px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 576px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+  }
+}

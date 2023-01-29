@@ -1,0 +1,31 @@
+.add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  background-color: var(--main-color);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 102;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ffc400;
+  animation: add 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes add {
+  0% {
+    box-shadow: 0 0 10px #ffc400;
+  }
+  100% {
+    box-shadow: 0 0 20px #ffc40010;
+  }
+}
+
+.add .add-icon {
+  fill: #fff;
+  width: 25px;
+  height: 25px;
+}

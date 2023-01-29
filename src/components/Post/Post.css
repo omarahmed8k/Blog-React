@@ -1,0 +1,73 @@
+.post {
+  background: #fff;
+  border-radius: 10px;
+  height: 300px;
+  width: 100%;
+  margin: 25px 0;
+  overflow: hidden;
+  box-shadow: 0 0 10px #0000001a;
+}
+
+.post .post-image {
+  height: 100%;
+  width: 35%;
+}
+
+.post .post-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.post .post-content {
+  height: 100%;
+  width: 65%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post .post-content .post-header h2 {
+  font-family: var(--font-bold);
+  margin-bottom: 15px;
+}
+
+.post .post-content .post-header p {
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.post .post-content .post-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #0000001a;
+  padding-top: 10px;
+}
+
+.post .post-content .post-info .post-author {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.post .post-content .post-info .post-author img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.post .post-content .post-info .post-author p {
+  font-family: var(--font-bold);
+}
+
+.post .post-content .post-info .post-date p {
+  font-size: 12px;
+  color: #ddd;
+}
