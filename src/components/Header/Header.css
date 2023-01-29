@@ -11,6 +11,8 @@
 }
 
 .header ul {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
@@ -117,4 +119,20 @@
 
 .header ul .logout:hover {
   background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .header ul {
+    justify-content: center;
+  }
+  .header ul li {
+    width: 100%;
+  }
+  .header ul .search-input {
+    width: 100%;
+  }
+  .header ul .profile-picture,
+  .header ul .logout {
+    display: none;
+  }
 }
