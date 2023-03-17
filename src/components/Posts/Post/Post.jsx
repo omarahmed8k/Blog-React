@@ -3,7 +3,10 @@ import "./Post.css";
 
 export default function Post(props) {
   return (
-    <ul className="post">
+    <ul className="post" key={props.index} onClick={() => {
+      props.onClick()
+    }
+    } >
       <li className="post-image">
         <img src="https://picsum.photos/200/300" alt="post" />
       </li>
@@ -22,6 +25,6 @@ export default function Post(props) {
           </div>
         </div>
       </li>
-    </ul>
+    </ ul>
   );
 }

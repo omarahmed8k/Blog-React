@@ -3,8 +3,10 @@ import "./Header.css";
 import { ReactComponent as SearchIcon } from "../../assets/images/searchIcon.svg";
 import { ReactComponent as ArrowIcon } from "../../assets/images/arrowIcon.svg";
 import { ReactComponent as Logout } from "../../assets/images/logoutIcon.svg";
+import { useSearchParams } from "react-router-dom";
 
 export default function Header() {
+  let [searchParams, setSearchParams] = useSearchParams();
   return (
     <div className="header">
       <div className="container">
@@ -22,10 +24,14 @@ export default function Header() {
                 type="text"
                 placeholder="Search"
                 onChange={(e) => {
-                  console.log(e.target.value);
+                  setSearchParams(`search=${e.target.value}`);
                 }}
               />
-              <div className="arrow">
+              <div className="arrow" onClick={
+                () => {
+                  console.log(searchParams);
+                }
+              }>
                 <ArrowIcon className="arrow-icon" />
               </div>
             </div>
