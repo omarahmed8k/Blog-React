@@ -9,23 +9,24 @@ function Items({ currentItems }) {
         <>
             {currentItems &&
                 currentItems?.map((item) => (
-                    <Post
-                        key={item.id}
-                        postTitle={item.title}
-                        postDescription={item.body}
-                        postAuthor="John Doe"
-                        postDate="2021-01-01"
-                        onClick={() => {
-                            console.log(`Clicked on post ${item.id}`);
-                        }}
-                    />
+                    <>
+                        <Post
+                            key={item._id}
+                            postTitle={item.title}
+                            postDescription={item.body}
+                            postAuthor={item.subject}
+                            postDate={
+                                new Date(item.createdAt).toLocaleDateString()
+                            }
+                        />
+                    </>
                 ))}
         </>
     );
 }
 
 export default function Posts({ itemsPerPage }) {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
 
     const [posts, setPosts] = useState([]);
     const [itemOffset, setItemOffset] = useState(0);
@@ -47,24 +48,25 @@ export default function Posts({ itemsPerPage }) {
             });
             setPosts(searchResults);
         } else {
-            fetch("https://jsonplaceholder.typicode.com/posts")
+            fetch("https://blog-api-l9xf.onrender.com/blogs")
                 .then((response) => response.json())
-                .then((json) => setPosts(json));
+                .then((data) => setPosts(data))
+                .catch((error) => console.log(error));
         }
     }, [searchParams]);
 
-    console.log(searchParams.get("search"));
-    console.log(posts);
-
     useEffect(() => {
         try {
-            fetch("https://jsonplaceholder.typicode.com/posts")
+            fetch("https://blog-api-l9xf.onrender.com/blogs")
                 .then((response) => response.json())
-                .then((json) => setPosts(json));
+                .then((data) => setPosts(data))
+                .catch((error) => console.log(error));
         } catch (error) {
             console.log(error);
         }
     }, []);
+
+    console.log(posts)
 
     return (
         <>
